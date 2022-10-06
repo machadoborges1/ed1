@@ -1,0 +1,19 @@
+int a, b;
+int *P1, *P2, **P3;
+float *P4;
+
+
+(a) a = 10;  foi atribuido o valor de 10 ao a.
+(b) b = &a;  erro.
+(c) P1 = a;  erro.
+(d) a = &P1;  erro.
+(e) *P1 = &a;  conteudo de a passa a ser o endereço de a.
+(f) &P1 = &a;  erro.
+(g) P4 = &a;  erro.
+(h) P4 = P1;  erro.
+(i) P2 = P1 = &a;  erro
+(j) *P1 = 20; pega o endereço que P1 aponta e troca seu conteudo para 20.
+(k) *P2 = *P1; endereço apontado por P2 recebe conteudo do endereço apontado por P1
+(l) *P3 = &P1; erro
+(m) P3 = &P2;  P3 recebe endereço de P2
+(n) **P3 = *P1; conteudo apontado por P3 recebe conteudo apontado por P1.

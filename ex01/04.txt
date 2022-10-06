@@ -1,0 +1,4 @@
+Explique a diferença entre passagem de parâmetros por valor e por referência.
+
+
+Passagem por parametro o valor é copiado para outra variavel, enquanto por referencia é passada a referencia para a propria variavel
