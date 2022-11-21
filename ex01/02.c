@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void leitura(int **matriz, int linha, int coluna){
+    for(int i = 0; i<linha; i++)
+        for(int j = 0; j<coluna; j++){
+            printf("valor que deseja colocar na matriz na posição [%d][%d]", i+1, j+1);
+            scanf("%d", &matriz[i][j]);
+        }
+}
+
 int **cria_matriz(int linha, int coluna){
     while(linha > 5 || coluna > 5){
         printf("Por favor escolha um valor ate 5 para o numero de linhas e colunas");
@@ -10,15 +18,10 @@ int **cria_matriz(int linha, int coluna){
     int **matriz = (int**) malloc(linha * sizeof(int*));
     for(int i = 0; i<linha; i++)
         matriz[i] = (int*) malloc(coluna * sizeof(int));
-    return matriz;
-}
 
-void leitura(int **matriz, int linha, int coluna){
-    for(int i = 0; i<linha; i++)
-        for(int j = 0; j<coluna; j++){
-            printf("valor que deseja colocar na matriz na posição [%d][%d]", i+1, j+1);
-            scanf("%d", &matriz[i][j]);
-        }
+    leitura(matriz, linha, coluna);
+
+    return matriz;
 }
 
 int **multiplica(int **matrizA, int linhaA, int colunaA, int **matrizB, int linhaB, int colunaB){
@@ -56,11 +59,11 @@ void desaloca(int ** matriz, int linha){
 
 int main(){
 
-    int **m1 = aloca(2,3);
-    leitura(m1,2,3);
+    int **m1 = cria_matriz(2,3);
+    //leitura(m1,2,3);
 
-    int **m2 = aloca(3,4);
-    leitura(m2,3,4);
+    int **m2 = cria_matriz(3,4);
+    //leitura(m2,3,4);
 
     int **m3 = multiplica(m1,2,3,m2,3,4);
 
